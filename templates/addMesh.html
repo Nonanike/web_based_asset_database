@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div id="containerAdd">
+    <div id="titleAdd">
+        <h3>Upload your 3D models HERE!</h3>
+    </div>
+    <div id="form">
+        <form action="{{ url_for('addMesh') }}" method="post" enctype="multipart/form-data">
+            <label for="meshData">File</label>
+            <input id="meshData" type="file" name="meshData" accept=".obj, .fbx, .usd">
+            <br/><br/>
+            <input autocomplete="off" autofocus id="name" name="name" placeholder="Name of your model" type="text">
+            <br/><br/>
+            <input autocomplete="off" autofocus id="type" name="type" placeholder="Please specify the type of the file" type="text">
+            <br/><br/>
+            <input autocomplete="off" autofocus id="author" name="author" placeholder="Author" type="text">
+            <br/><br/>
+            <input autocomplete="off" autofocus id="description" name="description" placeholder="Description" type="text">
+            <br/><br/>
+            <input autocomplete="off" autofocus id="date" name="date" placeholder="Date" type="date">
+            <br/><br/>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

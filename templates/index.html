@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div id="containerIndex">
+
+    <div id="blank"></div>
+
+    <div id="logo">
+        <h1>Web based asset database</h1>
+    </div>
+    
+    <div id="menu">
+        <div id="menuLogo">
+            <h2>MENU</h2>
+        </div>
+            <ul>
+                <div class="option">
+                <li><a href="{{ url_for('addMesh') }}">Add your 3D Mesh</a></li>
+                </div>
+            </br></br>
+                <div class="option">
+                <li><a href="{{ url_for('viewDatabase') }}">Database: view and download</a></li>
+                </div>
+            </ul>
+    </div>
+
+    <div id="content">
+        <h2>
+            This is a web based asset database that allows the user to upload a 3D models onto the website and into a database that can later be viewed and downloaded.
+        </h2>
+        <h3>
+        <ol>
+            <br></br>
+        <li>To upload 3D model:</li>
+                <br></br>
+                <ul>
+                    <li>Click on 'Add your 3D Mesh' on the left side bar </li>
+                <br></br>
+                    <li>Choose a file you want to add to the database. Important: you can only upload 'obj', 'fbx' or 'usd'</li>
+                <br></br>
+                    <li>Enter the exact same name of your file in the 'Name of your model' space as your original file's name - otherwise it won't allow you to download it later (for example: Cube.obj - Name of your model: Cube)</li>
+                <br></br>
+                    <li>Enter the accurate type of your file - obj, fbx or usd (for example: Cube.obj - Type: obj)</li>
+                <br></br>
+                    <li>Add author, description and the date if you wish it to be added to the database</li>
+                <br></br>
+                    <li>Clik 'Submit'</li>
+                </ul>
+                <br></br>
+        <li>To view the database and download any 3D meshes:</li>
+                <br></br>
+                <ul>
+                    <li>Click on 'Database: view and download' on the left side bar</li>
+                <br></br>
+                    <li>Choose a file you want to download and click 'Download'</li>
+                </ul>
+        </ol>
+        </h3>
+    </div>
+
+    <div id="footer">
+        2024 &copy Nina Kokot
+    </div>
+
+
+</div>
+
+{% endblock %}

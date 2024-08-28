@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div id="containerView">
+
+      <div id="titleView">
+            <h3>Uploaded mesh</h3>
+      </div>
+      
+      <div id="table">
+      <table border="1">
+            <thead><br>
+                  <br>
+                  <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Author</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Download</th>
+                  </tr>
+                  {% for row in tables %}
+                  <tr> 
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                        <td>{{ row[4] }}</td>
+                        <td>{{ row[5] }}</td>
+                        <td>
+                              <label for="meshData">File</label>
+                              <output id="meshData" type="file" name="meshData" >
+                              <a href="{{ url_for('download', mesh_id=row[0])}}" download="">Download</a>
+                        </td>
+                  </tr>
+                  {% endfor %}
+            </thead>
+            <tbody>
+
+            </tbody>
+      </table>
+      </div>
+</div>
+{% endblock %}
+<!--</html>-->
